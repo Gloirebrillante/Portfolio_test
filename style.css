@@ -22,7 +22,7 @@ body {
 header {
   text-align: center;
   padding: 30px 0 10px 0;
-  background-color: #004080;
+  background-color: #1A2045;
   color: white;
   margin-bottom: 20px;
 }
@@ -37,7 +37,7 @@ nav ul {
   padding: 0;
   display: flex;
   justify-content: center;
-  background-color: #0073e6;
+  background-color: #0F1338;
   margin: 0 0 20px 0;
 }
 
@@ -69,10 +69,10 @@ section {
 }
 
 h2 {
-  border-bottom: 3px solid #004080;
+  border-bottom: 3px solid #1A2045;
   padding-bottom: 5px;
   margin-bottom: 15px;
-  color: #004080;
+  color: #1A2045;
 }
 
 .projet {
@@ -85,11 +85,11 @@ h2 {
 
 .projet h3 {
   margin-top: 0;
-  color: #0073e6;
+  color: #0F1338;
 }
 
 .projet a {
-  color: #0073e6;
+  color: #0F1338;
   text-decoration: none;
 }
 
@@ -104,7 +104,7 @@ ul {
 footer {
   text-align: center;
   padding: 15px 0;
-  background-color: #004080;
+  background-color: #1A2045;
   color: white;
   position: fixed;
   width: 100%;
