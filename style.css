@@ -5,7 +5,13 @@
   font-style: normal;
 }
 
+.im-fell-dw-pica-sc-regular {
+  font-family: "IM Fell DW Pica SC", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 h1{
   color: #27F55B;
-  font-family: "Playfair Display", serif;
+  font-family: "IM Fell DW Pica SC", serif;
 }
