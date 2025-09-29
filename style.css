@@ -11,11 +11,114 @@
   font-style: normal;
 }
 
-h1{
-  color: #27F55B;
+body {
   font-family: "IM Fell DW Pica SC", serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0 15px;
+  color: #333;
 }
 
-p{
-   font-family: "IM Fell DW Pica SC", serif;
+header {
+  text-align: center;
+  padding: 30px 0 10px 0;
+  background-color: #004080;
+  color: white;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #0073e6;
+  margin: 0 0 20px 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px 5px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #005bb5;
+  border-radius: 4px;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  border-bottom: 3px solid #004080;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  color: #004080;
+}
+
+.projet {
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  box-shadow: 0 0 7px rgba(0,0,0,0.1);
+}
+
+.projet h3 {
+  margin-top: 0;
+  color: #0073e6;
+}
+
+.projet a {
+  color: #0073e6;
+  text-decoration: none;
+}
+
+.projet a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 15px 0;
+  background-color: #004080;
+  color: white;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 8px 0;
+  }
 }
