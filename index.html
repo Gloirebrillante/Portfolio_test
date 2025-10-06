@@ -23,28 +23,30 @@
 
 
 <script>
-  const toggleSwitch = document.querySelector('#checkbox');
-  const body = document.body;
-  const modeText = document.getElementById('mode-text');
+const toggleSwitch = document.querySelector('#checkbox');
+const body = document.body;
+const modeText = document.getElementById('mode-text');
 
-  // Charger le thème sauvegardé
-  if (localStorage.getItem('theme') === 'light') {
+// Si l’utilisateur a déjà choisi le thème
+if (localStorage.getItem('theme') === 'light') {
+  body.classList.add('light-mode');
+  toggleSwitch.checked = true;
+  modeText.textContent = 'Mode clair';
+}
+
+// Au changement du switch
+toggleSwitch.addEventListener('change', () => {
+  if (toggleSwitch.checked) {
     body.classList.add('light-mode');
-    toggleSwitch.checked = true;
     modeText.textContent = 'Mode clair';
+    localStorage.setItem('theme', 'light');
+  } else {
+    body.classList.remove('light-mode');
+    modeText.textContent = 'Mode sombre';
+    localStorage.setItem('theme', 'dark');
   }
+});
 
-  toggleSwitch.addEventListener('change', () => {
-    if (toggleSwitch.checked) {
-      body.classList.add('light-mode');
-      modeText.textContent = 'Mode clair';
-      localStorage.setItem('theme', 'light');
-    } else {
-      body.classList.remove('light-mode');
-      modeText.textContent = 'Mode sombre';
-      localStorage.setItem('theme', 'dark');
-    }
-  });
 </script>
 
 
