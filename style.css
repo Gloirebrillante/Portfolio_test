@@ -30,6 +30,23 @@ body.light-mode {
   --border-color: #d0d0d0;
 }
 
+#theme-toggle {
+  background: none;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  font-family: inherit;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+  background-color: var(--accent-color);
+  color: var(--card-bg);
+}
+
 body {
   font-family: "Courier New", Courier, monospace;
   background-color: var(--bg-color);
