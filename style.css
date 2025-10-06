@@ -22,7 +22,6 @@
   --border-color: #2a2a2a;
 }
 
-/* 🌞 Mode clair */
 body.light-mode {
   --bg-color: #f4f4f4;
   --card-bg: #ffffff;
