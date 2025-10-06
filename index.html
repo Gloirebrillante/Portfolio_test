@@ -14,7 +14,7 @@
     <p>Étudiante en BTS SIO option SLAM</p>
 
   <button id="theme-toggle" aria-label="Changer de mode">
-    🌙 Mode clair
+    Mode clair
   </button>
 </header>
 
@@ -25,13 +25,13 @@
   // Charger le thème sauvegardé
   if (localStorage.getItem('theme') === 'light') {
     body.classList.add('light-mode');
-    toggle.textContent = '🌙 Mode sombre';
+    toggle.textContent = 'Mode sombre';
   }
 
   toggle.addEventListener('click', () => {
     body.classList.toggle('light-mode');
     const isLight = body.classList.contains('light-mode');
-    toggle.textContent = isLight ? '🌙 Mode sombre' : '🌞 Mode clair';
+    toggle.textContent = isLight ? 'Mode sombre' : 'Mode clair';
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
   });
 </script>
