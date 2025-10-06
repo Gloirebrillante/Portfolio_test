@@ -1,39 +1,40 @@
+.im-fell-dw-pica-sc-regular {
+  font-family: "IM Fell DW Pica SC", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.playfair-display-<uniquifier> {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* ====== STYLE DARK SOBRE ====== */
 
 :root {
   --bg-color: #121212;
   --card-bg: #1a1a1a;
   --text-color: #e4e4e4;
-  --accent-color: #7da0b1;
+  --accent-color: #7da0b1;   /* gris-bleu pâle */
   --border-color: #2a2a2a;
 }
 
-body.light-mode {
-  --bg-color: #f4f4f4;
-  --card-bg: #ffffff;
-  --text-color: #2b2b2b;
-  --accent-color: #4a7080;
-  --border-color: #d0d0d0;
+body {
+  font-family: "Courier New", Courier, monospace;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
 }
 
 header {
-  position: relative;
   text-align: center;
   padding: 2rem 1rem;
   border-bottom: 1px solid var(--border-color);
   background: linear-gradient(180deg, #141414, #1a1a1a);
-}
-
-/* Switch dans le header, position absolue */
-.theme-switch-wrapper {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  top: 1.5rem;
-  right: 2rem;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-  color: var(--accent-color);
 }
 
 h1 {
@@ -124,81 +125,6 @@ footer {
   border-top: 1px solid var(--border-color);
   color: #999;
   font-size: 0.9rem;
-}
-
-/* ============ SWITCH MODE CLAIR / SOMBRE ============ */
-
-.theme-switch-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 10px;
-  position: absolute;
-  top: 1.5rem;
-  right: 2rem;
-  font-size: 0.9rem;
-  color: var(--accent-color);
-}
-
-.theme-switch {
-  position: relative;
-  display: inline-block;
-  width: 48px;
-  height: 24px;
-}
-
-.theme-switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #444;
-  transition: 0.4s;
-  border-radius: 24px;
-}
-
-.slider::before {
-  position: absolute;
-  content: "";
-  height: 18px;
-  width: 18px;
-  left: 3px;
-  bottom: 3px;
-  background-color: #fff;
-  transition: 0.4s;
-  border-radius: 50%;
-}
-
-/* Quand le switch est activé */
-input:checked + .slider {
-  background-color: var(--accent-color);
-}
-
-input:checked + .slider::before {
-  transform: translateX(24px);
-}
-
-#mode-text {
-  font-style: normal;
-  color: var(--accent-color);
-  user-select: none;
-}
-
-/* Ajustement responsive */
-@media (max-width: 600px) {
-  .theme-switch-wrapper {
-    position: static;
-    justify-content: center;
-    margin-top: 1rem;
-  }
 }
 
 /* Responsive */
