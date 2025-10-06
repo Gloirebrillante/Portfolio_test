@@ -10,9 +10,32 @@
   </head>
 <body>
   <header>
-    <h1 class="typewriter">Portfolio – Garance Chaussy</h1>
+  <h1 class="typewriter">Portfolio – Garance Chaussy</h1>
     <p>Étudiante en BTS SIO option SLAM</p>
-  </header>
+
+  <button id="theme-toggle" aria-label="Changer de mode">
+    🌙 Mode clair
+  </button>
+</header>
+
+<script>
+  const toggle = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  // Charger le thème sauvegardé
+  if (localStorage.getItem('theme') === 'light') {
+    body.classList.add('light-mode');
+    toggle.textContent = '🌙 Mode sombre';
+  }
+
+  toggle.addEventListener('click', () => {
+    body.classList.toggle('light-mode');
+    const isLight = body.classList.contains('light-mode');
+    toggle.textContent = isLight ? '🌙 Mode sombre' : '🌞 Mode clair';
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  });
+</script>
+
 
   <main>
     <section id="a_propos">
@@ -76,7 +99,7 @@
   </main>
 
   <footer>
-    <p>© 2025 – [Ton prénom et nom] | BTS SIO – SLAM</p>
+    <p>© 2025 – Garance Chaussy | BTS SIO – SLAM</p>
   </footer>
 </body>
 </html>
