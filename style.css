@@ -11,114 +11,131 @@
   font-style: normal;
 }
 
+/* ====== STYLE DARK SOBRE ====== */
+
+:root {
+  --bg-color: #121212;
+  --card-bg: #1a1a1a;
+  --text-color: #e4e4e4;
+  --accent-color: #7da0b1;   /* gris-bleu pâle */
+  --border-color: #2a2a2a;
+}
+
 body {
-  font-family: "IM Fell DW Pica SC", serif;
-  background-color: #f9f9f9;
+  font-family: "Courier New", Courier, monospace;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   margin: 0;
-  padding: 0 15px;
-  color: #333;
+  padding: 0;
+  line-height: 1.6;
 }
 
 header {
   text-align: center;
-  padding: 30px 0 10px 0;
-  background-color: #1A2045;
-  color: white;
-  margin-bottom: 20px;
+  padding: 2rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  background: linear-gradient(180deg, #141414, #1a1a1a);
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2.5rem;
+h1 {
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  background-color: #0F1338;
-  margin: 0 0 20px 0;
+h2 {
+  color: var(--accent-color);
+  border-left: 3px solid var(--accent-color);
+  padding-left: 10px;
+  margin-top: 2rem;
+  font-size: 1.4rem;
 }
 
-nav ul li {
-  margin: 0 15px;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  padding: 10px 5px;
-  display: inline-block;
-  transition: background-color 0.3s ease;
-}
-
-nav ul li a:hover {
-  background-color: #005bb5;
-  border-radius: 4px;
+h3 {
+  color: #c0c0c0;
+  margin-top: 1rem;
 }
 
 main {
   max-width: 900px;
-  margin: 0 auto 40px auto;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
 }
 
 section {
-  margin-bottom: 40px;
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-color);
 }
 
-h2 {
-  border-bottom: 3px solid #1A2045;
-  padding-bottom: 5px;
-  margin-bottom: 15px;
-  color: #1A2045;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
 }
 
-.projet {
-  background-color: white;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 6px;
-  box-shadow: 0 0 7px rgba(0,0,0,0.1);
+th, td {
+  border: 1px solid var(--border-color);
+  padding: 0.6rem;
 }
 
-.projet h3 {
-  margin-top: 0;
-  color: #0F1338;
+th {
+  background-color: #202020;
+  color: var(--accent-color);
 }
 
-.projet a {
-  color: #0F1338;
+a {
+  color: var(--accent-color);
   text-decoration: none;
 }
 
-.projet a:hover {
+a:hover {
   text-decoration: underline;
 }
 
 ul {
-  padding-left: 20px;
+  padding-left: 1.5rem;
+  list-style-type: "— ";
+}
+
+/* Animation machine à écrire (discrète) */
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid var(--accent-color);
+  display: inline-block;
+  animation: typing 3s steps(40, end), blink 0.8s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
 }
 
 footer {
   text-align: center;
-  padding: 15px 0;
-  background-color: #1A2045;
-  color: white;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  left: 0;
+  padding: 1rem;
+  border-top: 1px solid var(--border-color);
+  color: #999;
+  font-size: 0.9rem;
 }
 
-@media (max-width: 600px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
+/* Responsive */
+@media (max-width: 700px) {
+  body {
+    font-size: 0.95rem;
   }
-
-  nav ul li {
-    margin: 8px 0;
+  main {
+    padding: 0 1rem;
+  }
+  h1 {
+    font-size: 1.6rem;
   }
 }
