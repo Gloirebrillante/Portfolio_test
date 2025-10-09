@@ -84,24 +84,31 @@
   <footer>
     <p>© 2025 – Garance Chaussy | BTS SIO – SLAM</p>
   </footer>
-  <script>
-  const toggleBtn = document.getElementById('theme-toggle');
+ <script>
+  const toggle = document.getElementById('theme-toggle');
   const body = document.body;
 
-  // Récupération du thème précédent depuis le stockage local
-  if (localStorage.getItem('theme') === 'light') {
+  // Par défaut, le thème sombre est activé
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') {
     body.classList.add('light-theme');
+    toggle.checked = true;
+  } else {
+    body.classList.remove('light-theme');
+    toggle.checked = false;
   }
 
-  toggleBtn.addEventListener('click', () => {
-    body.classList.toggle('light-theme');
-    // Sauvegarde du choix
-    if (body.classList.contains('light-theme')) {
+  toggle.addEventListener('change', () => {
+    if (toggle.checked) {
+      body.classList.add('light-theme');
       localStorage.setItem('theme', 'light');
     } else {
+      body.classList.remove('light-theme');
       localStorage.setItem('theme', 'dark');
     }
   });
+</script>
+
 </script>
 </body>
 </html>
