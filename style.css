@@ -87,7 +87,7 @@ th, td {
 
 th {
   background-color: #202020;
-  color: var(--bg-color);
+  color: var(--accent-color);
 }
 
 a {
@@ -206,7 +206,7 @@ footer {
 
 .slider:before {
   position: absolute;
-  content: "";
+  content: ".";
   height: 26px;
   width: 26px;
   left: 4px;
@@ -227,7 +227,7 @@ input:checked + .slider {
 
 input:checked + .slider:before {
   transform: translateX(26px);
-  content: "";
+  content: ".";
 }
 
 
