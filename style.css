@@ -230,23 +230,8 @@ input:checked + .slider:before {
   content: ".";
 }
 
-/* Empêche le tableau de dépasser du cadre */
-#tableau {
-  overflow-x: auto;
-}
-
-/* Force le tableau à ne jamais dépasser la largeur de la page */
 #tableau table {
-  width: 100%;
-  table-layout: fixed;
-  word-wrap: break-word;
-}
-
-#tableau th, 
-#tableau td {
-  word-wrap: break-word;
-  white-space: normal;
-  text-align: center;
+  font-size: 0.85rem;
 }
 
 
