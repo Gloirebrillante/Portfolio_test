@@ -87,7 +87,7 @@ th, td {
 
 th {
   background-color: var(--bg-color);
-  color: var(--bg-color);
+  color: var(--accent-color);
 }
 
 a {
