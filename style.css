@@ -87,7 +87,7 @@ th, td {
 
 th {
   background-color: #202020;
-  color: var(--accent-color);
+  color: var(--bg-color);
 }
 
 a {
