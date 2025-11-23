@@ -1,3 +1,6 @@
+/* ========== Base existante ========== */
+/* (J'ai conservé l'essentiel de ton style, et ajouté les règles pour le sommaire) */
+
 .im-fell-dw-pica-sc-regular {
   font-family: "IM Fell DW Pica SC", serif;
   font-weight: 400;
@@ -11,14 +14,19 @@
   font-style: normal;
 }
 
-/* ====== STYLE DARK SOBRE ====== */
-
+/* ====== Variables et thème sombre par défaut ====== */
 :root {
   --bg-color: #121212;
   --card-bg: #1a1a1a;
   --text-color: #e4e4e4;
   --accent-color: #7da0b1;
   --border-color: #2a2a2a;
+  --toc-width: 220px;
+}
+
+/* Scroll fluide */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -30,6 +38,7 @@ body {
   line-height: 1.6;
 }
 
+/* ===== Header / sections / tables (conservés) ===== */
 header {
   text-align: center;
   padding: 2rem 1rem;
@@ -37,8 +46,6 @@ header {
   background: linear-gradient(180deg, var(--card-bg), var(--bg-color));
   transition: background 0.5s ease, color 0.5s ease;
 }
-
-
 
 h1 {
   font-size: 2rem;
@@ -60,9 +67,9 @@ h3 {
 }
 
 main {
-  max-width: 1100px; 
+  max-width: 1100px;
   margin: 2rem auto;
-  padding: 0 2rem; 
+  padding: 0 2rem;
 }
 
 section {
@@ -93,7 +100,7 @@ th {
 a {
   color: var(--accent-color);
   text-decoration: underline;
-  font_weight: bold;
+  font-weight: bold;
 }
 
 a:hover {
@@ -172,68 +179,88 @@ footer {
   --accent-color: #2e6d8b;
   --border-color: #ddd;
 }
-/* ====== SWITCH MODE CLAIR / SOMBRE ====== */
-.theme-switch-wrapper {
+
+/* ====== TOC / Sommaire ====== */
+#toc {
   position: fixed;
-  top: 1rem;
-  right: 1rem;
+  left: 1.5rem;
+  top: 4.2rem;
+  width: var(--toc-width);
   z-index: 1000;
+  font-size: 0.95rem;
 }
 
-.theme-switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-.theme-switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
+#toc #toc-toggle {
+  display: none; /* visible seulement en mobile via media query */
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--border-color);
-  transition: 0.4s;
-  border-radius: 34px;
 }
 
-.slider:before {
-  position: absolute;
-  content: " ";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: var(--card-bg);
+#toc ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+
+#toc li {
+  margin: 0.4rem 0;
+}
+
+#toc a {
+  display: block;
+  padding: 0.5rem 0.6rem;
+  border-radius: 6px;
+  text-decoration: none;
   color: var(--text-color);
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: 0.4s;
 }
 
-input:checked + .slider {
-  background-color: var(--accent-color);
+#toc a:hover {
+  background: rgba(255,255,255,0.03);
 }
 
-input:checked + .slider:before {
-  transform: translateX(26px);
-  content: " ";
+#toc a.active {
+  background: linear-gradient(90deg, rgba(125,160,177,0.14), rgba(125,160,177,0.05));
+  color: var(--accent-color);
+  font-weight: 700;
 }
 
+/* Si l'écran est petit, déplacer le sommaire en haut et rendre le bouton visible */
+@media (max-width: 900px) {
+  #toc {
+    left: 1rem;
+    right: 1rem;
+    top: 1rem;
+    width: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  #toc #toc-toggle { display: inline-block; }
+  #toc ul {
+    display: none;
+    position: absolute;
+    top: 3.2rem;
+    left: 1rem;
+    right: 1rem;
+  }
+  #toc ul.open { display: block; }
+}
+
+/* Ajustements pour que le contenu principal ne soit pas caché par le sommaire sur desktop */
+@media (min-width: 901px) {
+  main {
+    margin-left: calc(var(--toc-width) + 2rem);
+  }
+}
+
+/* Spécifique : taille du tableau résumé */
 #tableau table {
   font-size: 0.85rem;
 }
-
-
-
