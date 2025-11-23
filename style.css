@@ -92,7 +92,7 @@ th {
 
 a {
   color: var(--accent-color);
-  text-decoration: none;
+  text-decoration: underline;
   font_weight: bold;
 }
 
