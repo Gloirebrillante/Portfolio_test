@@ -9,6 +9,20 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 <body>
+  <!-- Sommaire / Menu (accessible) -->
+  <nav id="toc" aria-label="Sommaire du site">
+    <button id="toc-toggle" aria-expanded="true" aria-controls="toc-list">☰</button>
+    <ul id="toc-list">
+      <li><a href="#a_propos">À propos</a></li>
+      <li><a href="#competences">Compétences</a></li>
+      <li><a href="#stages">Stages</a></li>
+      <li><a href="#tableau">Tableau de synthèse</a></li>
+      <li><a href="#certification">Certifications</a></li>
+      <li><a href="#veille">Veille</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  
   <header>
     <h1 class="typewriter">Portfolio – Garance Chaussy</h1>
     <div class="theme-switch-wrapper">
@@ -197,31 +211,66 @@
   <footer>
     <p>© 2025 – Garance Chaussy | BTS SIO – SLAM</p>
   </footer>
- <script>
-  const toggle = document.getElementById('theme-toggle');
-  const body = document.body;
-
-  // Par défaut, le thème sombre est activé
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'light') {
-    body.classList.add('light-theme');
-    toggle.checked = true;
-  } else {
-    body.classList.remove('light-theme');
-    toggle.checked = false;
-  }
-
-  toggle.addEventListener('change', () => {
-    if (toggle.checked) {
+   <script>
+    // Theme toggle (conserve ton script mais nettoyé)
+    const toggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
       body.classList.add('light-theme');
-      localStorage.setItem('theme', 'light');
+      if (toggle) toggle.checked = true;
     } else {
       body.classList.remove('light-theme');
-      localStorage.setItem('theme', 'dark');
+      if (toggle) toggle.checked = false;
     }
-  });
-</script>
+    if (toggle) {
+      toggle.addEventListener('change', () => {
+        if (toggle.checked) {
+          body.classList.add('light-theme');
+          localStorage.setItem('theme', 'light');
+        } else {
+          body.classList.remove('light-theme');
+          localStorage.setItem('theme', 'dark');
+        }
+      });
+    }
 
-</script>
+    // TOC (sommaire) toggle pour petits écrans
+    const tocToggle = document.getElementById('toc-toggle');
+    const tocList = document.getElementById('toc-list');
+    if (tocToggle && tocList) {
+      tocToggle.addEventListener('click', () => {
+        const expanded = tocToggle.getAttribute('aria-expanded') === 'true';
+        tocToggle.setAttribute('aria-expanded', String(!expanded));
+        tocList.classList.toggle('open');
+      });
+    }
+
+    // Active link on scroll
+    const links = document.querySelectorAll('#toc a');
+    const sections = Array.from(links).map(a => document.querySelector(a.getAttribute('href')));
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const id = entry.target.id;
+        const link = document.querySelector(`#toc a[href="#${id}"]`);
+        if (entry.isIntersecting) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }, { root: null, rootMargin: '0px 0px -60% 0px', threshold: 0 });
+
+    sections.forEach(sec => { if (sec) observer.observe(sec); });
+
+    // close TOC on link click (mobile)
+    document.querySelectorAll('#toc a').forEach(a => {
+      a.addEventListener('click', () => {
+        tocList.classList.remove('open');
+        tocToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
 </body>
 </html>
