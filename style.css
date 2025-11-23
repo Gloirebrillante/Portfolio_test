@@ -93,6 +93,7 @@ th {
 a {
   color: var(--accent-color);
   text-decoration: none;
+  font_weight: bold;
 }
 
 a:hover {
