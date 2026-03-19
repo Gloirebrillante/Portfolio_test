@@ -111,6 +111,47 @@ ul {
   list-style-type: "— ";
 }
 
+.veille-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.card .date {
+  font-size: 12px;
+  opacity: 0.7;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.card a {
+  text-decoration: none;
+  color: #4da6ff;
+  font-weight: bold;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
 /* Animation machine à écrire (discrète) */
 .typewriter {
   overflow: hidden;
