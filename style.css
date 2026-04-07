@@ -118,14 +118,14 @@ ul {
 }
 
 .card {
-  background-color: #2a2a2a;
+  background-color: var(--card-bg);
   padding: 15px;
   border-radius: 10px;
-  color: white;
+  color: var(--accent-color);
 }
 
 .card a {
-  color: #4da6ff;
+  color: var(--accent-color);
   text-decoration: none;
 }
 
