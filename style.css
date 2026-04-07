@@ -212,7 +212,7 @@ footer {
 /* ====== MODE CLAIR ====== */
 .light-theme {
   --bg-color: #f9f9f9;
-  --card-bg: #ffffff;
+  --card-bg: #e2e2e2;
   --text-color: #222;
   --accent-color: #2e6d8b;
   --border-color: #ddd;
